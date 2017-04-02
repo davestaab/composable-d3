@@ -33,7 +33,7 @@ const scale = scaleLinear()
 
 const selection = select('.earth')
     .selectAll('.layer')
-    .data(data.layers);
+    .data(earth.layers);
 
 selection.enter()
     .append('circle')
