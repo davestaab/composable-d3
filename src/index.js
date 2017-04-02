@@ -24,33 +24,17 @@ const earth = {
     }
 }
 
-
 const size = 200;
 const scale = scaleLinear()
     .domain([0, 4025]) // miles
     .range([0, size]); // pixels
 
-console.log('4000 to pixels is', scale(4000));
-console.log('0 to pixels is', scale(0));
-console.log('earths crust in pixels', scale(earth.crust.radius));
+const selection = select('.earth')
+    .selectAll('.layer')
+    .data(data.layers);
 
-var earthCrust = select('.earth')
-  .append('circle');
-
-earthCrust.attr('r', scale(earth.crust.radius));
-earthCrust.attr('fill', earth.crust.color);
-//
-select('.earth')
-  .append('circle')
-  .attr('r', scale(earth.mantle.radius))
-  .attr('fill', earth.mantle.color);
-
-select('.earth')
+selection.enter()
     .append('circle')
-    .attr('r', scale(earth.outerCore.radius))
-    .attr('fill', earth.outerCore.color);
-//
-select('.earth')
-    .append('circle')
-    .attr('r', scale(earth.innerCore.radius))
-    .attr('fill', earth.innerCore.color);
+    .attr('class', 'layer')
+    .attr('r', d => scale(d.radius))
+    .attr('fill', d => d.color);
