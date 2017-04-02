@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Composable Charts</title>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <h1>D3 Lesson 1</h1>
+        <h2>Basic SVG</h2>
+
+        <hr/>
+        <h3>Viewbox</h3>
+        <svg width="500" height="500" viewBox="0 0 500 500" >
+            <circle r="200" cx="250" cy="250"fill="orange">
+        </svg>
+        <hr/>
+
+        <h3>Groups</h3>
+        <svg width="250" height="250" >
+         <g transform="translate(125, 125)">
+           <circle r="125" fill="green"/>
+           <circle r="105" fill="brown"/>
+           <circle r="85" fill="red"/>
+         </g>
+        </svg>
+        <hr/>
+
+        <h3>Basic Shapes</h3>
+        <svg width="250" height="250" viewBox="0 0 250 250">
+           <rect x="10" y="10" width="100" height="100" fill="cyan"/>
+           <line x1="0" y1="200" x2="200" y2="0" stroke="blue"/>
+        </svg>
+        <hr/>
+
+        <h3>Paths</h3>
+        <svg width="250" height="250" viewBox="0 0 250 250">
+           <path d="M0,0L50,150L150,0L250,50Z" fill="orange"/>
+        </svg>
+        <script src="../dist/build.js"></script>
+    </body>
+</html>
