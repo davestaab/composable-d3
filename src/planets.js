@@ -22,3 +22,19 @@ export const earth = {
         }
     ]
 }
+
+export const mars = {
+    name: 'Mars',
+    layers: [
+        {
+            name: 'crust',
+            radius: 2106,
+            color: '#e31a1c'
+        },
+        {
+            name: "core",
+            radius: 1115,
+            color: "#fdc086"
+        }
+    ]
+}

@@ -1,6 +1,8 @@
 import { scaleLinear } from 'd3-scale';
 import { select } from 'd3-selection';
-import { earth } from './planets';
+import { earth, mars } from './planets';
+import planetChart from './planetChart';
+import helper from './helper';
 
 const planet = planetChart()
 
@@ -14,27 +16,3 @@ const selection = select('#chart')
     .selectAll('.layer')
     .data(earth.layers)
     .call(planet)
-
-function planetChart() {
-    let size = 200;
-    const scale = scaleLinear()
-        .domain([0, 4025]) // miles
-        .range([0, size]); // pixels
-
-    function chart(selection) {
-        scale.range([0, size]);
-        selection.enter()
-            .append('circle')
-            .attr('class', 'layer')
-            .attr('r', d => scale(d.radius))
-            .attr('fill', d => d.color);
-    };
-
-    chart.size = function (_) {
-        if (!arguments.length) return size;
-        size = _;
-        return chart;
-    };
-
-    return chart;
-}
