@@ -7,7 +7,13 @@ const scale = scaleLinear()
     .domain([0, 4025]) // miles
     .range([0, size]); // pixels
 
-const selection = select('.earth')
+const selection = select('#chart')
+    .append('svg')
+    .attr('class', 'space')
+    .attr('width', 500)
+    .attr('height', 500)
+    .append('g')
+    .attr('transform', 'translate(250, 250)')
     .selectAll('.layer')
     .data(earth.layers);
 
