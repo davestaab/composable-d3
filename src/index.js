@@ -13,6 +13,25 @@ const selection = select('#chart')
     .attr('height', 500)
     .append('g')
     .attr('transform', 'translate(250, 250)')
-    .selectAll('.layer')
+
+selection.selectAll('.layer')
     .data(earth.layers)
-    .call(planet)
+    .call(planet);
+
+window.updateChart = function(type){
+    console.log('switching to chart type:', type)
+    switch(type) {
+        case 'earth':
+            selection
+                .selectAll('.layer')
+                .data(earth.layers)
+                .call(chart);
+            break;
+        case 'mars':
+            selection
+                .selectAll('.layer')
+                .data(mars.layers)
+                .call(chart);
+            break;
+    }
+}

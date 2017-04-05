@@ -1,4 +1,5 @@
 import { scaleLinear } from 'd3-scale';
+import { transition } from 'd3-transition';
 
 export default function planetChart() {
     let size = 200;
