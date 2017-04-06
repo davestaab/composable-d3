@@ -1,37 +1,18 @@
 import { scaleLinear } from 'd3-scale';
 import { select } from 'd3-selection';
-import { earth, mars } from './planets';
+import { planets } from './planets';
 import planetChart from './planetChart';
-import helper from './helper';
 
-const planet = planetChart()
+const planet = planetChart().size(200)
 
 const selection = select('#chart')
     .append('svg')
     .attr('class', 'space')
     .attr('width', 500)
-    .attr('height', 500)
+    .attr('height', 1400)
     .append('g')
-    .attr('transform', 'translate(250, 250)')
+    .attr('transform', 'translate(250,  200)')
 
 selection.selectAll('.layer')
-    .data(earth.layers)
+    .data(planets[8].layers)
     .call(planet);
-
-window.updateChart = function(type){
-    console.log('switching to chart type:', type)
-    switch(type) {
-        case 'earth':
-            selection
-                .selectAll('.layer')
-                .data(earth.layers)
-                .call(chart);
-            break;
-        case 'mars':
-            selection
-                .selectAll('.layer')
-                .data(mars.layers)
-                .call(chart);
-            break;
-    }
-}

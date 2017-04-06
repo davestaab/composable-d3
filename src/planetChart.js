@@ -6,7 +6,6 @@ export default function planetChart() {
     const scale = scaleLinear()
         .domain([0, 4025]) // miles
         .range([0, size]); // pixels
-
     function chart(selection) {
         scale.range([0, size]);
         selection.enter()
