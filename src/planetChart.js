@@ -8,11 +8,29 @@ export default function planetChart() {
         .range([0, size]); // pixels
     function chart(selection) {
         scale.range([0, size]);
+        // enter
         selection.enter()
             .append('circle')
             .attr('class', 'layer')
+            .attr('r', 0)
+            .transition()
             .attr('r', d => scale(d.radius))
             .attr('fill', d => d.color);
+
+        // update
+        selection
+            .transition()
+            .attr('r', 0)
+            .transition()
+            .attr('r', d => scale(d.radius))
+            .attr('fill', d => d.color);
+
+        // exit
+        selection
+            .exit()
+            .transition()
+            .attr('r', 0)
+            .remove();
     };
 
     chart.size = function (_) {

@@ -11,7 +11,7 @@ const selection = select('#chart')
     .attr('width', 500)
     .attr('height', 1400)
     .append('g')
-    .attr('transform', 'translate(250,  200)')
+    .attr('transform', 'translate(250,  200)');
 
 selection.selectAll('.layer')
     .data(planets[8].layers)
