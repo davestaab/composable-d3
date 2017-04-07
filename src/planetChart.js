@@ -6,8 +6,12 @@ export default function planetChart() {
     const scale = scaleLinear()
         .domain([0, 4025]) // miles
         .range([0, size]); // pixels
-    function chart(selection) {
+    function chart(entry) {
         scale.range([0, size]);
+        
+        const selection = entry
+            .selectAll('.layer')
+            .data(d => d.layers);
         // enter
         selection.enter()
             .append('circle')
