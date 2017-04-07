@@ -1,11 +1,23 @@
 import { scaleLinear } from 'd3-scale';
 import { select } from 'd3-selection';
 import { planets } from './planets';
+import { max } from 'd3-array';
 import planetChart from './planetChart';
 import solarSystemChart from './solarSystemChart';
 
-const planet = planetChart().size(10)
-const solarSystem = solarSystemChart().size(3200).planetChart(planet);
+
+const planet = planetChart()
+const scale = planet.scale();
+scale
+    .range([0, 3200])
+    .domain([
+        0,
+        max(planets.map(d => d.distance))
+    ]);
+
+const solarSystem = solarSystemChart()
+    .scale(scale)
+    .planetChart(planet.scale(scale));
 
 const selection = select('#chart')
     .append('svg')

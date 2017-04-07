@@ -2,13 +2,13 @@ import { scaleLinear } from 'd3-scale';
 import { transition } from 'd3-transition';
 
 export default function planetChart() {
-    let size = 200;
-    const scale = scaleLinear()
+
+    let scale = scaleLinear()
         .domain([0, 4025]) // miles
-        .range([0, size]); // pixels
+        .range([0, 100]); // pixels
+
     function chart(entry) {
-        scale.range([0, size]);
-        
+
         const selection = entry
             .selectAll('.layer')
             .data(d => d.layers);
@@ -37,9 +37,9 @@ export default function planetChart() {
             .remove();
     };
 
-    chart.size = function (_) {
-        if (!arguments.length) return size;
-        size = _;
+    chart.scale = function (_) {
+        if (!arguments.length) return scale;
+        scale = _;
         return chart;
     };
 
