@@ -2,7 +2,7 @@ import { scaleLinear } from 'd3-scale';
 import { select } from 'd3-selection';
 import { earth, mars } from './planets';
 import planetChart from './planetChart';
-import helper from './helper';
+// import helper from './helper';
 
 const planet = planetChart()
 

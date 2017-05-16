@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "d3": "^4.7.4",
-    "webpack": "^2.3.2"
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.5"
   },
-    "scripts": {
-        "serve": "http-server .",
-        "build": "webpack src/index.js dist/build.js"
-    }
+  "scripts": {
+    "serve": "http-server .",
+    "build": "webpack",
+    "dev": "node_modules/.bin/webpack-dev-server"
+  }
 }
