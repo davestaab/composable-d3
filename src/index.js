@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { scaleLinear } from 'd3-scale';
 import { select } from 'd3-selection';
 import { planets } from './planets';
@@ -20,8 +19,3 @@ const selection = select('#chart')
 selection
     .datum(planets)
     .call(solarSystem);
-=======
-
-console.log('hello world5');
-console.log('hello world');
->>>>>>> dev-server
