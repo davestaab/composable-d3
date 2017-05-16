@@ -25,13 +25,13 @@ window.updateChart = function(type){
             selection
                 .selectAll('.layer')
                 .data(earth.layers)
-                .call(chart);
+                .call(planet);
             break;
         case 'mars':
             selection
                 .selectAll('.layer')
                 .data(mars.layers)
-                .call(chart);
+                .call(planet);
             break;
     }
 }
