@@ -14,5 +14,5 @@ const selection = select('#chart')
     .attr('transform', 'translate(250,  200)');
 
 selection.selectAll('.layer')
-    .data(planets[8].layers)
+    .data(planets[0].layers)
     .call(planet);
