@@ -1,10 +1,13 @@
 {
   "dependencies": {
     "d3": "^4.7.4",
+    "d3-scale": "^1.0.6",
+    "d3-selection": "^1.1.0",
+    "d3-transition": "^1.1.0",
     "webpack": "^2.3.2"
   },
-    "scripts": {
-        "serve": "http-server .",
-        "build": "webpack src/index.js dist/build.js"
-    }
+  "scripts": {
+    "serve": "http-server .",
+    "build": "webpack src/index.js dist/build.js"
+  }
 }
